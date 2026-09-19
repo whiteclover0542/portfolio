@@ -1,0 +1,8 @@
+[
+  { "date": "2026-08-11", "present": true },
+  { "date": "2026-08-18", "present": true },
+  { "date": "2026-08-25", "present": false },
+  { "date": "2026-09-01", "present": true },
+  { "date": "2026-09-08", "present": true },
+  { "date": "2026-09-15", "present": true }
+]

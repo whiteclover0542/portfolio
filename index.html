@@ -4,23 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HI, I'm WHITECLOVER</title>
+  <meta name="description" content="보안 관점에서 AI를 만들고 검증하며, 풀스택으로 서비스까지 연결하는 개발자 WHITECLOVER의 포트폴리오입니다.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23333333%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>W</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a id="top-contact" href="mailto:whiteclover0542@gmail.com">Contact</a>
 
   <header id="intro">
-    <h1>WHITECLOVER</h1>
-    <p class="hero-kicker">WHO AM I</p>
-    <p id="hero-role">Security-minded Full-Stack Developer</p>
-    <p class="hero-kicker">WHAT I DO</p>
-    <p id="hero-mission">보안 관점에서 AI를 만들고 검증하며, 풀스택으로 서비스까지 연결합니다.</p>
+    <div class="hero-inner">
+      <p id="hero-role">Security-minded Full-Stack Developer</p>
+      <h1>WHITECLOVER</h1>
+      <p id="hero-one-line">기록하고 검증하며 끝까지 완성하는 사람</p>
+      <nav class="hero-nav" aria-label="포트폴리오 바로가기">
+        <a href="#story">이야기</a>
+        <a href="#numbers">숫자</a>
+        <a href="#projects">대표작</a>
+        <a href="#resume">이력서</a>
+      </nav>
+    </div>
+  </header>
 
-    <p class="hero-kicker">PROOF</p>
+  <section id="about" aria-label="소개">
+    <p id="hero-mission">보안 관점에서 AI를 만들고 검증하며, 풀스택으로 서비스까지 연결합니다.</p>
     <div id="hero-highlights">
       <div class="hero-stat">
         <span class="v">0.98%</span>
@@ -31,38 +40,80 @@
         <span class="k">Crisis Detection</span>
       </div>
       <div class="hero-stat">
-        <span class="v">4.6–4.8</span>
+        <span class="v">4.6-4.8</span>
         <span class="k">G-Eval</span>
       </div>
     </div>
-
     <p id="target-sentence">이 페이지는 함께 협업할 팀원분들께 제가 누구인지 보여드리기 위해 만들었습니다.</p>
-  </header>
+  </section>
+
+  <section id="story" aria-labelledby="story-title">
+    <h2 id="story-title">이름 없던 통증에서 평범한 오늘까지</h2>
+    <div class="story-list">
+      <article class="story-scene">
+        <p class="story-when">유치원 ~ 고등학교 3학년</p>
+        <h3><span class="scene-label">고난</span>이름이 없던 통증</h3>
+        <p>유치원 무렵부터 반복된 통증은 내게 오래도록 이름이 없었다. 피부 아래가 붓고 곪아 여러 병원을 다녀도 크면 나아질 거라는 말만 들었다. 검사에 보이지 않는 통증은 별일 아닌 것이 됐다. 나는 아프다고 말하는 대신 숨기는 법부터 배웠다. 거절하지 못하고 맞춰 주던 친구 관계에서 초등학교와 중학교에 한 번씩 상처를 받은 뒤에는 사람에게도 마음을 닫았다.</p>
+        <p>고등학교 2학년 후반, 세 번째로 찾아간 병원에서는 설명도 보호자 동의도 없이 처치가 시작됐다. 마취 주사를 맞았는데도 살을 째고 꿰매는 감각이 그대로 전해졌다. 뒤에 옮겨 간 대학병원에서 병변 부위는 국소마취가 잘 듣지 않을 수 있다는 설명과 함께 병명을 처음 들었다. 내가 유난스러운 게 아니었다. 화농성 한선염, 완치가 없는 희귀 질환이었다. 3학년에도 수술이 이어졌고, 집에서는 방문을 잠그고 게임만 했다. 출석 일수를 겨우 채워 졸업했다. 가장 어두운 시기였다.</p>
+      </article>
+      <article class="story-scene">
+        <p class="story-when">중학교 ~ 지금</p>
+        <h3><span class="scene-label">다시 일어난 날</span>곁에 있던 사람들</h3>
+        <p>나를 다시 일으킨 건 결심이 아니라 곁에 있어 준 사람들이었다.</p>
+        <p>중학교 때 누구와도 말을 섞지 않던 내게, 같은 반 친구 한 명이 매일 아침 먼저 인사를 건넸다. 한 달 넘게 모른 척했는데도 다음 날이면 또 인사했다. 어느 날 나도 모르게 손을 흔들었더니 그 친구는 하루 종일 그 얘기를 하고 다녔다. 그 인사에 닫아 둔 문이 조금 열렸다. <span class="ability-tag">대인관계력</span></p>
+        <p>부모님은 몇 년 동안 매일 밤 상처를 소독해 주셨다. 방에서 나오지 않던 때에도 문 앞에 밥상을 놓아 주셨고, 졸업식 날에는 여기까지 왔다고 말씀해 주셨다. 지금 곁에 있는 사람은 병을 알고도 나를 다르게 보지 않았고, 아픈 날에는 일찍 쉬자고 했다. 그렇게 곁에 있어 준 사람들 덕분에 나는 다시 일어설 수 있었다.</p>
+      </article>
+      <article class="story-scene">
+        <time datetime="2026-08-11">2026.08.11 ~</time>
+        <h3><span class="scene-label">현재</span>평범한 세 잎처럼</h3>
+        <p>2026년 8월 11일부터는 아침과 마무리에 하루를 기록한다. 9월 15일까지 23일을 기록했고 아침 기록 23회, 마무리 기록 21회였다(출처: 내 리추얼 기록). 기록이 비는 날이 있어도 다시 이어 썼다.</p>
+        <p>지금은 병을 이기려 하지 않고 관리한다. 아침마다 상처부터 확인하고, 통증이 올 것 같으면 바로 병원을 예약하고, 밤을 새우지 않는다. 성인이 되어 ADHD 진단을 받은 뒤로는 오래 앉아 있지 못하고 집중이 흩어지던 게 의지 문제가 아님을 알게 됐고, 지금은 약을 먹으며 집중을 관리한다. <span class="ability-tag">자기조절력</span></p>
+        <p>중학교 3학년, 특성화고에 가겠다고 스스로 정하고 끝까지 해 보겠다고 약속했다. 회계를 배우러 간 그 학교 실습실에서 반복문으로 별을 찍던 날, 쓴 대로 정직하게 움직이는 화면에 빠져 코딩에 관심이 생겼다. 코딩을 파고들면서 시스템을 지키는 보안으로 관심을 넓혔고, 누가 시키지 않아도 밤늦게까지 관련 글을 찾아 읽었다. 그 관심이 지금의 보안 프로젝트로 이어졌다. 휴학 중인 지금은 학교 밖 교육을 들으며 방향을 다시 잡고 있다. <span class="ability-tag">자기동기력</span></p>
+        <p>화이트클로버는 평범한 세 잎 클로버에서 따온 이름이다. 여전히 자주 아프고 다가가는 일도 서툴지만, 이제는 먼저 연락하고 힘든 날에도 예전처럼 숨기지만은 않으려 한다. 나는 오늘도 내 몸을 살피고, 할 수 있는 일을 하며, 다음 날을 준비한다.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="next-steps" aria-label="준비 중인 포트폴리오 항목">
+    <article id="numbers" class="next-step-card">
+      <h2>기록으로 확인하는 변화</h2>
+      <p>출석·리추얼·제출 원본을 다시 확인한 뒤, 출처와 함께 공개합니다.</p>
+      <!-- regen:start -->
+      <!-- regen:end -->
+    </article>
+    <article id="resume" class="next-step-card">
+      <h2>지원 문서</h2>
+      <p>이력서와 자기소개서는 사실 확인과 개인정보 점검을 마친 뒤 공개합니다.</p>
+      <a href="mailto:whiteclover0542@gmail.com">Contact →</a>
+    </article>
+  </section>
 
   <section id="disclosure">
     <h2>WORK & SKILLS</h2>
     <ul id="disclosure-scope">
-      <li tabindex="0" class="card-featured">
+      <li>
         <span class="label">GitHub</span>
         <div class="detail">
           <a href="https://github.com/whiteclover0542" target="_blank" rel="noopener">https://github.com/whiteclover0542</a>
-          <p>AI/LLM 기반 딥보이스 탐지 프로젝트를 중심으로 확인하실 수 있습니다.</p>
+          <p>아래 대표작 6개의 저장소를 모두 확인하실 수 있습니다.</p>
         </div>
       </li>
-      <li tabindex="0">
+      <li>
         <span class="label">기술 스택</span>
         <ul class="detail detail-list">
-          <li><strong>AI/ML</strong> 딥보이스 탐지 모델 구축, 파인튜닝, Grad-CAM 시각화</li>
-          <li><strong>LLM/RAG</strong> 생성, 검색, 평가</li>
-          <li><strong>Safety</strong> 위기 감지, 안전 라우팅</li>
-          <li><strong>Backend/Infra</strong> FastAPI, Docker</li>
-          <li><strong>Voice·Flutter</strong> TTS/STT, 클라이언트 구현</li>
+          <li><strong>AI/ML</strong> PyTorch, RawNet2, ONNX Runtime, 파인튜닝, Grad-CAM 시각화</li>
+          <li><strong>LLM/RAG</strong> Qwen, Gemini API, ChromaDB, pgvector, 하이브리드 검색, G-Eval 평가</li>
+          <li><strong>Safety</strong> 위기 감지, 안전 라우팅, LLM-as-judge</li>
+          <li><strong>Security</strong> Go 시크릿 탐지, 패스키(WebAuthn) 인증, 보안 로그 탐지 실험</li>
+          <li><strong>Backend/Infra</strong> FastAPI, Node.js, PostgreSQL, Docker, Vercel, Upstash Redis</li>
+          <li><strong>Automation/Test</strong> GitHub Actions, Cloudflare Workers, Playwright, unittest</li>
+          <li><strong>Frontend/Client</strong> HTML/CSS/JavaScript, Flutter, TTS/STT</li>
         </ul>
       </li>
-      <li tabindex="0">
+      <li>
         <span class="label">Security</span>
         <div class="detail">
-          <p>AI 서비스의 입력·출력과 사용자 안전을 보안 관점에서 검토합니다.</p>
+          <p>AI 서비스의 입력·출력과 사용자 안전을 보안 관점에서 검토하고, 시크릿 유출 탐지 도구와 보안 로그 탐지 실험을 직접 만들었습니다.</p>
         </div>
       </li>
     </ul>
@@ -72,26 +123,26 @@
     <section id="strengths">
       <h2>HOW I WORK</h2>
       <article class="strength">
-        <h3>01. 기준을 넘긴 뒤에도 강화합니다</h3>
-        <p class="situation"><strong>상황</strong> 여러 팀 개발 프로젝트에서, 이미 팀이 정한 목표 성능(목표치)에 도달한 상태였습니다.</p>
+        <h3>기준을 넘긴 뒤에도 강화합니다</h3>
+        <p class="situation"><strong>상황</strong> 딥보이스 탐지 팀 프로젝트에서, 이미 팀이 정한 목표 성능(목표치)에 도달한 상태였습니다.</p>
         <p class="action"><strong>행동</strong> 목표치를 채웠다고 끝내지 않고, 더 나은 결과를 위해 계속 점검하고 다듬으며 끝까지 파고들었습니다.</p>
-        <p class="result"><strong>결과</strong> 목표치를 넘어서는 수준까지 완성도를 끌어올렸습니다.</p>
+        <p class="result"><strong>결과</strong> 목표치를 넘어 EER 0.98%까지 판별 성능을 끌어올렸습니다.</p>
 
         <button type="button" class="evidence-toggle" aria-expanded="false" aria-controls="evidence-detail-1">자세히 보기</button>
         <div id="evidence-detail-1" class="evidence-detail" hidden>
-          딥보이스(음성 딥페이크) 탐지 AI 개발 당시, EER 0.98%(Equal Error Rate·동일오류율, 낮을수록 판별 성능이 뛰어남)까지 낮추는 성과를 냈습니다.
+          EER(Equal Error Rate, 동일오류율)은 낮을수록 판별 성능이 뛰어납니다. 학습 데이터를 늘려 가며 36.00%였던 EER을 0.98%까지 낮췄습니다.
         </div>
       </article>
 
       <article class="strength">
-        <h3>02. 결과를 의심하고 직접 검증합니다</h3>
-        <p class="situation"><strong>상황</strong> 여러 팀 개발 프로젝트에서, 결과물을 완성한 상태였습니다.</p>
+        <h3>결과를 의심하고 직접 검증합니다</h3>
+        <p class="situation"><strong>상황</strong> PetLoss Care AI 팀 프로젝트에서, 결과물을 완성한 상태였습니다.</p>
         <p class="action"><strong>행동</strong> 완성됐다고 끝내지 않고, 검증표·결과지표·성능표를 통합해 만들고 골든셋(golden set)과 G-Eval 같은 방법으로 직접 테스트·검증하며 부족한 점을 찾아 보완했습니다.</p>
         <p class="result"><strong>결과</strong> 놓쳤던 오점들을 미리 발견해 고칠 수 있었습니다.</p>
 
         <button type="button" class="evidence-toggle" aria-expanded="false" aria-controls="evidence-detail-2">자세히 보기</button>
         <div id="evidence-detail-2" class="evidence-detail" hidden>
-          <p>실제로 감정 체크인 AI를 검증표·성능표로 테스트하던 중, 1인칭 음성 인식 오류율(WER)이 19.1%로 목표치(15% 이하)를 초과한 것을 발견해 개선 작업으로 이어갔습니다. G-Eval 일관성·유용성·자연스러움·윤리 준수는 모두 목표(4.0 이상)를 넘겨 4.6~4.8대를 기록했습니다.</p>
+          <p>검증표·성능표와 골든셋으로 테스트해, 목표를 통과한 지표와 놓친 지표를 함께 찾아냈습니다. G-Eval은 일관성·유용성·자연스러움·윤리 준수 네 항목 모두 목표(4.0 이상)를 넘었습니다.</p>
           <ul class="evidence-list">
             <li><strong>G-Eval 평균</strong> 4.6~4.8점 (목표 4.0점 이상) 통과</li>
             <li><strong>위기 감지 정확도</strong> 40/40건, 100% (목표 90% 이상) 통과</li>
@@ -102,19 +153,18 @@
       </article>
 
       <article class="strength">
-        <h3>03. 작업 상태를 구조화합니다</h3>
-        <p class="situation"><strong>상황</strong> 여러 팀 개발 프로젝트에서, 크고 작은 변경 사항이 계속 생기는 상황이었습니다.</p>
+        <h3>작업 상태를 구조화합니다</h3>
+        <p class="situation"><strong>상황</strong> 팀 프로젝트에서 크고 작은 변경 사항이 계속 생기는 상황이었습니다.</p>
         <p class="action"><strong>행동</strong> 프로젝트 진행 상황을 Start → In Progress → Review → Done → Blocked 상태로 구분해 항상 정리하고 공유했습니다.</p>
         <p class="result"><strong>결과</strong> 헷갈리거나 빼먹는 것 없이 순서대로 일을 진행할 수 있었습니다.</p>
 
         <button type="button" class="evidence-toggle" aria-expanded="false" aria-controls="evidence-detail-3">자세히 보기</button>
         <div id="evidence-detail-3" class="evidence-detail" hidden>
-          <p>Progress·해야 할 일·체크리스트·작업 현황을 항상 정리하며 문서화했습니다.</p>
           <p>실제 팀 프로젝트에서 시작 전·진행 중·리뷰 중(PR)·완료·막힘 상태를 색으로 구분한 진행 상태표를 만들어, 팀원들도 한눈에 진행 상황을 파악할 수 있게 관리했습니다.</p>
           
           <ul class="evidence-list">
             <li><strong>상태 표기 체계</strong> 시작 전 → 진행 중 → 리뷰 중(PR) → 완료 → 막힘(blocked) 5단계로 색상 구분해 관리</li>
-            <li><strong>진행률 추적</strong> 공통 기반 8/8 · 프로토타입 8개 기능 8/8 · 멀티모달(가산점) 4/4 — 영역별 표로 한눈에 파악</li>
+            <li><strong>진행률 추적</strong> 공통 기반 8/8 · 프로토타입 8개 기능 8/8 · 멀티모달(가산점) 4/4, 영역별 표로 한눈에 파악</li>
             <li><strong>완료 아카이브</strong> 담당 프롬프트 6개 파일을 검토 결과와 함께 동결(2026-06-15) 처리해 이력 추적 가능</li>
           </ul>
         </div>
@@ -128,13 +178,12 @@
     <ul class="project-grid project-grid--solo">
       <li class="project-card project-card--solo">
         <div class="project-head">
-          <span class="project-index">01</span>
           <h3>Today CVE Info</h3>
         </div>
-        <div class="project-stat"><span class="v">1인</span><span class="k">기획·개발·배포·운영 전담</span></div>
+        <div class="project-stat"><span class="v">8,733건</span><span class="k">27일간 자동 수집·분류한 CVE (2026.09.19 기준)</span></div>
         <p class="project-line"><strong>Problem</strong> 매일 쏟아지는 신규 CVE 중 무엇이 실제로 위험한지 빠르게 파악하기 어려운 문제</p>
-        <p class="project-line"><strong>My Role</strong> 기획부터 NVD 데이터 수집 배치, AI 해설 생성, 프론트엔드 대시보드, 장애 재현 시나리오까지 1인 기획·개발·운영</p>
-        <p class="project-line project-result"><strong>Result</strong> 매일 자동 수집·해설·배포되는 라이브 서비스로 운영 중 · 근거 없는 해설은 생성하지 않는 안전장치 설계</p>
+        <p class="project-line"><strong>My Role</strong> 기획부터 NVD 데이터 수집 배치, AI 해설 생성, 프론트엔드 대시보드, 장애 재현 시나리오, 배포·운영까지 혼자 진행</p>
+        <p class="project-line project-result"><strong>Result</strong> 2026년 8월 23일부터 28일 중 27일 자동 수집·배포되며 운영 중. 주요 CVE 521건을 골라 그중 475건에 원인·방지법까지 한국어 해설 생성</p>
         <ul class="project-tech">
           <li>Node.js</li>
           <li>GitHub Actions</li>
@@ -154,21 +203,84 @@
           <a class="project-link" href="https://github.com/whiteclover0542/Today_CVE_information" target="_blank" rel="noopener">GitHub →</a>
           <a class="project-link" href="https://today-cve-information.vercel.app/" target="_blank" rel="noopener">Live →</a>
         </div>
-        <p class="project-note">* 위 팀 프로젝트 3개와 달리, 기획부터 개발·배포·운영까지 혼자 진행한 개인 프로젝트</p>
+      </li>
+
+      <li class="project-card project-card--solo">
+        <div class="project-head">
+          <h3>SecretHound</h3>
+        </div>
+        <div class="project-stat"><span class="v">37개</span><span class="k">기본 시크릿 탐지 룰</span></div>
+        <p class="project-line"><strong>Problem</strong> 현재 파일에서는 지운 API 키도 Git 히스토리에 남아 공개 저장소에서 유출될 수 있는 문제</p>
+        <p class="project-line"><strong>My Role</strong> 현재 파일·커밋 이력을 함께 검사하는 Go 기반 탐지 도구와 오탐 필터, Windows 실행 파일·GitHub Actions 연동을 구현</p>
+        <p class="project-line project-result"><strong>Result</strong> 탐지 결과를 마스킹해 HTML·Markdown·JSON 리포트로 제공하고, 키별 폐기와 히스토리 정리 절차까지 안내</p>
+        <ul class="project-tech">
+          <li>Go</li>
+          <li>Git</li>
+          <li>GitHub Actions</li>
+          <li>Regex</li>
+        </ul>
+
+        <button type="button" class="evidence-toggle" aria-expanded="false" aria-controls="project-detail-solo-2">자세히 보기</button>
+        <div id="project-detail-solo-2" class="evidence-detail" hidden>
+          <p>정규식 일치만으로 끝내지 않고 키워드 프리필터, 엔트로피 검사, 경로·값 문맥 기반 신뢰도 점수로 오탐을 줄였습니다. 레이블된 평가 코퍼스에서는 Precision·Recall·F1이 모두 1.000이었지만, 자체 코퍼스에 맞춰 다듬은 결과이므로 제3자 코퍼스 검증이 추가로 필요하다는 한계도 함께 기록했습니다.</p>
+        </div>
+
+        <a class="project-link" href="https://github.com/whiteclover0542/SecretHound" target="_blank" rel="noopener">GitHub →</a>
+      </li>
+    </ul>
+
+    <p class="project-group-label project-group-label--spaced">Research · Security</p>
+    <ul class="project-grid project-grid--research">
+      <li class="project-card">
+        <div class="project-head">
+          <h3>Security Telemetry Loss</h3>
+        </div>
+        <div class="project-stat"><span class="v">82,890회</span><span class="k">규칙 엔진 v2 실행</span></div>
+        <p class="project-line"><strong>Paper</strong> 발생 시각인가, 수집 시각인가: 텔레메트리 도착 지연이 시간 윈도우 탐지의 누락과 그 흔적을 바꾸는 방식</p>
+        <p class="project-line"><strong>Problem</strong> 수집 지연으로 이벤트 도착 순서가 바뀔 때, 시간 윈도우 기반 보안 탐지 규칙이 로그 손실 없이도 공격 흔적을 놓칠 수 있는 문제</p>
+        <p class="project-line"><strong>My Role</strong> 발생 시각·수집 시각을 다르게 쓰는 두 탐지 엔진을 비교하는 실험을 설계하고, 사전 등록한 가설·분석 스크립트·논문·재현 패키지를 구성</p>
+        <p class="project-line project-result"><strong>Result</strong> 수집 시각 기반 구성에서는 지연이 탐지 누락으로 이어질 수 있음을 확인했고, 발생 시각 보존·재정렬 버퍼가 남기는 흔적과 복구 범위도 함께 분석</p>
+        <ul class="project-tech">
+          <li>Python</li>
+          <li>DARPA OpTC</li>
+          <li>Experiment Design</li>
+          <li>unittest</li>
+          <li>Reproducibility</li>
+        </ul>
+
+        <button type="button" class="evidence-toggle" aria-expanded="false" aria-controls="project-detail-research-1">자세히 보기</button>
+        <div id="project-detail-research-1" class="evidence-detail" hidden>
+          <p>독립적으로 검증한 OpTC 호스트 로그 65,872,086건을 평가 입력으로 사용했습니다. 초기 엔진 버그가 효과를 과장했던 사실을 발견한 뒤, 무효가 된 주장까지 논문 정정 기록에 남기고 v2 결과로 다시 판정했습니다. 대용량 원본 대신 바이트 범위 색인·다운로드 manifest·테스트·분석 스크립트를 제공해 재현 경로를 남겼습니다.</p>
+        </div>
+
+        <div class="project-links">
+          <a class="project-link" href="https://github.com/whiteclover0542/security-telemetry-loss/blob/main/paper/PAPER.pdf" target="_blank" rel="noopener">논문 PDF →</a>
+          <a class="project-link" href="https://github.com/whiteclover0542/security-telemetry-loss" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </li>
+    </ul>
+
+    <p class="project-group-label project-group-label--spaced">App · 준비 중</p>
+    <ul class="project-grid project-grid--research">
+      <li class="project-card project-card--planned">
+        <div class="project-head">
+          <h3>다음 대표작 앱</h3>
+        </div>
+        <p class="project-line">아직 공개하지 않은 예정 자리입니다. 앱이 완성되면 이 자리에 링크와 결과를 함께 공개합니다.</p>
       </li>
     </ul>
 
     <p class="project-group-label project-group-label--spaced">Team Project · AI</p>
-    <ul class="project-grid">
+    <p class="project-group-note">* 팀 공용 저장소에서 본인이 담당한 코드만 발췌한 개인 스냅샷입니다. 단독으로는 실행되지 않습니다.</p>
+    <ul class="project-grid project-grid--team">
       <li class="project-card">
         <div class="project-head">
-          <span class="project-index">01</span>
           <h3>Deepfake Detection AI</h3>
         </div>
         <div class="project-stat"><span class="v">0.98%</span><span class="k">EER · Equal Error Rate</span></div>
-        <p class="project-line"><strong>Problem</strong> 음성 딥페이크(딥보이스)를 탐지하는 모델 개발</p>
+        <p class="project-line"><strong>Problem</strong> 진짜 음성과 딥보이스(음성 딥페이크)를 구별해야 하는 문제</p>
         <p class="project-line"><strong>My Role</strong> 데이터 정제부터 RawNet2 모델 구축, 한국어 파인튜닝, Grad-CAM 기반 판단 근거 시각화까지 전 과정 담당</p>
-        <p class="project-line project-result"><strong>Result</strong> EER 0.98% (300개 36.00% → 1,000개 15.60% → 5,000개 6.24% → 전체 0.98%)</p>
+        <p class="project-line project-result"><strong>Result</strong> 학습 데이터를 늘려 가며 EER을 36.00%에서 0.98%까지 낮춤</p>
         <ul class="project-tech">
           <li>RawNet2</li>
           <li>PyTorch</li>
@@ -195,18 +307,16 @@
         </div>
 
         <a class="project-link" href="https://github.com/whiteclover0542/Deep_Voice_Phishing_Detection" target="_blank" rel="noopener">GitHub →</a>
-        <p class="project-note">* 팀 공용 저장소에서 본인이 담당한 코드만 발췌한 개인 스냅샷 — 단독 실행은 되지 않음</p>
       </li>
 
       <li class="project-card">
         <div class="project-head">
-          <span class="project-index">02</span>
           <h3>PetLoss Care AI</h3>
         </div>
         <div class="project-stat"><span class="v">40/40</span><span class="k">Crisis Detection Accuracy</span></div>
         <p class="project-line"><strong>Problem</strong> 정서적 위기 상황(반려동물 상실 등)에서 안전하게 위로 메시지를 생성하고 위험 신호는 놓치지 않아야 하는 문제</p>
         <p class="project-line"><strong>My Role</strong> 위기 감지 규칙 엔진, 추모 메시지 생성 파이프라인, RAG 검색, LLM-as-judge 평가까지 안전성 중심으로 설계</p>
-        <p class="project-line project-result"><strong>Result</strong> G-Eval 4.6–4.8 · 위기 감지 40/40(100%) · WER 19.1%→개선</p>
+        <p class="project-line project-result"><strong>Result</strong> G-Eval 4.6-4.8, 위기 감지 40/40(100%) 통과. 목표를 넘은 음성 인식 오류율(WER 19.1%)은 찾아내 개선 작업으로 연결</p>
         <ul class="project-tech">
           <li>LLM</li>
           <li>RAG</li>
@@ -233,18 +343,16 @@
         </div>
 
         <a class="project-link" href="https://github.com/whiteclover0542/petloss_crisis_llm" target="_blank" rel="noopener">GitHub →</a>
-        <p class="project-note">* 팀 공용 저장소에서 본인이 담당한 코드만 발췌한 개인 스냅샷 — 단독 실행은 되지 않음</p>
       </li>
 
       <li class="project-card">
         <div class="project-head">
-          <span class="project-index">03</span>
           <h3>SafeMaintAI</h3>
         </div>
-        <div class="project-stat"><span class="v">100%</span><span class="k">매뉴얼 출처 전수검증</span></div>
+        <div class="project-stat"><span class="v">100%</span><span class="k">인용 출처 정확도 (전수검증)</span></div>
         <p class="project-line"><strong>Problem</strong> 제조설비 정비작업 전 위험요인·안전조치 파악과 근거 문서 탐색에 시간이 걸리는 문제</p>
         <p class="project-line"><strong>My Role</strong> RAG 하이브리드 검색부터 LLM 추론, 백엔드 API, 채팅 UI, 품질 평가까지 AI 파이프라인 전 구간 구현</p>
-        <p class="project-line project-result"><strong>Result</strong> 검색 Recall/MRR·답변 성공률·Faithfulness 등 자체 평가 지표로 품질을 검증하며 파이프라인 완성</p>
+        <p class="project-line project-result"><strong>Result</strong> 검색 Recall/MRR, 답변 성공률, Faithfulness로 품질을 측정했고, 답변이 인용한 매뉴얼 출처는 전수검증으로 정확도 100%를 확인</p>
         <ul class="project-tech">
           <li>Python</li>
           <li>pgvector</li>
@@ -264,7 +372,6 @@
         </div>
 
         <a class="project-link" href="https://github.com/whiteclover0542/SafeMaintAI" target="_blank" rel="noopener">GitHub →</a>
-        <p class="project-note">* 팀 공용 저장소에서 본인이 담당한 코드만 발췌한 개인 스냅샷 — 단독 실행은 되지 않음</p>
       </li>
     </ul>
   </section>
@@ -303,7 +410,7 @@
     </div>
 
     <details id="pk-log-wrap">
-      <summary>요청·응답 로그 (증거용, 자동 기록 — 최신이 위)</summary>
+      <summary>요청·응답 로그 (증거용, 자동 기록, 최신이 위)</summary>
       <pre id="pk-log"></pre>
     </details>
   </section>

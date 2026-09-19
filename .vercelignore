@@ -2,3 +2,4 @@ scripts/
 .data/
 drafts/
 graphify-out/
+.env*

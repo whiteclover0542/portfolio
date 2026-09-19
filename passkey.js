@@ -74,10 +74,10 @@
       const verifyRes = await api("POST", "/api/register-verify", { username, passkeyName, attestationResponse });
       if (!verifyRes.ok) return setStatus(`등록 검증 실패: ${verifyRes.data?.error}`, true);
 
+      await loadPrivateArea();
       setStatus(
         `패스키 등록 완료 (총 ${verifyRes.data.passkeyCount}개). 서버에 저장된 값(공개키): ${verifyRes.data.storedPublicKeyPreview}`
       );
-      await loadPrivateArea();
     } catch (e) {
       setStatus(e.message, true);
     }
@@ -124,12 +124,12 @@
     }
     const res = await api("DELETE", "/api/passkeys", { id });
     if (!res.ok) return setStatus(`삭제 실패: ${res.data?.error}`, true);
+    await loadPrivateArea();
     setStatus(
       res.data.remaining === 0
         ? "패스키가 모두 삭제되었습니다. 이 계정은 더 이상 로그인할 수 없습니다(복구 수단 없음)."
         : `패스키 삭제됨 (남은 패스키 ${res.data.remaining}개)`
     );
-    await loadPrivateArea();
   }
 
   function renderNotes(notes) {

@@ -37,7 +37,8 @@ async function setPresence(cdp, authenticatorId, enabled) {
 }
 
 async function main() {
-  const browser = await chromium.launch();
+  // PW_CHANNEL=chrome 로 설치된 시스템 Chrome 사용 (playwright 번들 다운로드가 막힌 환경용)
+  const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || undefined });
   const context = await browser.newContext();
   const page = await context.newPage();
 

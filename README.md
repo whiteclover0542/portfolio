@@ -11,7 +11,7 @@ Security-minded Full-Stack Developer 개인 포트폴리오 페이지. 기본은
 - **WHO AM I / WHAT I DO / PROOF** — 첫 화면에서 3초 안에 포지셔닝과 핵심 지표(EER 0.98%, 위기 감지 40/40, G-Eval 4.6–4.8)를 보여줍니다.
 - **WORK & SKILLS** — GitHub, 기술 스택, 보안 관점 소개.
 - **HOW I WORK** — 상황·행동·결과(STAR) 형식으로 정리한 강점 3가지, 각 항목에 근거 자료를 토글로 연결.
-- **PROJECTS** — Deepfake Detection AI, Emotion Check-in AI, SafeMaintAI 등 프로젝트를 Problem·Role·Result·Tech·GitHub 링크로 소개.
+- **PROJECTS** — Solo(Today CVE Info, SecretHound) · Research(Security Telemetry Loss) · Team(Deepfake Detection AI, PetLoss Care AI, SafeMaintAI)을 Problem·Role·Result·Tech·GitHub 링크로 소개.
 - **PRIVATE**(과제8) — 패스키로만 열리는 비공개 메모 구역. [과제8/](과제8/) 문서 참고.
 
 ## 기술 스택

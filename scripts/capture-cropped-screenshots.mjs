@@ -5,7 +5,7 @@ import { chromium } from "playwright";
 import fs from "node:fs";
 import path from "node:path";
 
-const BASE = process.env.TEST_BASE_URL || "https://makeportfolio-red.vercel.app";
+const BASE = process.env.TEST_BASE_URL || "https://whiteclover-portfolio.vercel.app";
 const outDir = path.join(process.cwd(), "과제8", "evidence-prod", "cropped");
 fs.mkdirSync(outDir, { recursive: true });
 

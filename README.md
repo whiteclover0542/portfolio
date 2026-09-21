@@ -2,7 +2,7 @@
 
 Security-minded Full-Stack Developer 개인 포트폴리오 페이지. 기본은 빌드 도구 없는 정적 HTML/CSS/JS 원페이지이고, 과제8에서 비밀번호 없이 패스키(WebAuthn)로 잠기는 비공개 구역을 추가하면서 Vercel 서버리스 함수 + Redis가 더해졌습니다.
 
-**🔗 https://makeportfolio-red.vercel.app**
+**🔗 https://whiteclover-portfolio.vercel.app**
 
 ## 소개
 
@@ -65,7 +65,7 @@ PROGRESS.md     마지막 과제 BR-A 진행 현황
 
 ### 과제1 — 포트폴리오 페이지
 
-- **결과물**: https://makeportfolio-red.vercel.app
+- **결과물**: https://whiteclover-portfolio.vercel.app
 - [검증안내서.md](과제1/검증안내서.md) — 페이지 확인 방법과 통과 기준
 - [공개비공개점검표.md](과제1/공개비공개점검표.md) — 공개 대상 문장 및 공개/비공개 정보 기준
 - [AI3줄.md](과제1/AI3줄.md) — 이 프로젝트에서 AI 활용 내역 요약
@@ -73,7 +73,7 @@ PROGRESS.md     마지막 과제 BR-A 진행 현황
 
 ### 과제8 — 패스키(WebAuthn) 인증
 
-- **결과물**: https://makeportfolio-red.vercel.app
+- **결과물**: https://whiteclover-portfolio.vercel.app
 - **소스**: https://github.com/whiteclover0542/portfolio
 - [제출.md](과제8/제출.md) / [제출.pdf](과제8/제출.pdf) — 제출용으로 필요한 내용을 한 파일에 모은 최종본
 - [ASSIGNMENT.md](과제8/ASSIGNMENT.md) — 과제 지침·요구사항 원문
@@ -85,4 +85,4 @@ PROGRESS.md     마지막 과제 BR-A 진행 현황
 
 ## 배포
 
-Vercel(`https://makeportfolio-red.vercel.app`)로 배포합니다. 정적 페이지(과제1)와 `api/` 서버리스 함수 + Upstash Redis(과제8)를 함께 서빙합니다. GitHub 저장소와는 자동 연동이 안 돼 있어 배포 갱신은 `vercel --prod`로 수동 트리거합니다.
+Vercel(`https://whiteclover-portfolio.vercel.app`)로 배포합니다. 정적 페이지(과제1)와 `api/` 서버리스 함수 + Upstash Redis(과제8)를 함께 서빙합니다. GitHub 저장소와는 자동 연동이 안 돼 있어 배포 갱신은 `vercel --prod`로 수동 트리거합니다.

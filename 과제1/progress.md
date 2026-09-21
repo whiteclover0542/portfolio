@@ -7,7 +7,7 @@
 |---|------|------|------|
 | 1 | 배포 경로 정하기 | ✅ | GitHub Pages로 시작 → 과제8에서 서버(API)가 필요해지며 Vercel로 이전, 이후 공개 링크는 Vercel로 통일 |
 | 2 | 최소 뼈대 페이지 만들기 | ✅ | index.html |
-| 3 | 저장소 생성 → Pages 켜기 → 링크 확인 | ✅ | https://makeportfolio-red.vercel.app (현재 공개 링크. GitHub Pages는 더 이상 안내하지 않음) |
+| 3 | 저장소 생성 → Pages 켜기 → 링크 확인 | ✅ | https://whiteclover-portfolio.vercel.app (현재 공개 링크. GitHub Pages는 더 이상 안내하지 않음) |
 | 4 | 대상 문장 작성 | ✅ | "함께 협업할 팀원분들께 제가 누구인지 보여드리기 위해 만들었습니다" |
 | 5 | 공개할 것/공개하지 않을 것 각 3개 정리 | ✅ | `공개비공개점검표.md`, 페이지 내용과 일치 |
 | 6 | 강점 3개 (상황·행동·결과) | ✅ | HOW I WORK 섹션 3개 |

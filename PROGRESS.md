@@ -101,7 +101,7 @@
 
 ## 사이트 체크리스트
 
-- [x] HTTPS 공개 URL 1개가 존재한다. (https://makeportfolio-red.vercel.app)
+- [x] HTTPS 공개 URL 1개가 존재한다. (https://whiteclover-portfolio.vercel.app)
 - [x] 새 시크릿 창에서 로그인 없이 열린다. (2026-09-19, 로그인 없는 새 브라우저 컨텍스트)
 - [x] 첫 화면에 이름과 한 줄 소개가 있다. (닉네임 WHITECLOVER)
 - [x] 한 줄 소개가 `…한 사람`으로 끝난다.
@@ -117,7 +117,7 @@
 
 | 제출물 | 상태 | 파일/URL | 검증 |
 | --- | :---: | --- | --- |
-| 공개 사이트 | 🟨 | https://makeportfolio-red.vercel.app | HTTPS·시크릿 창 비로그인 접속 |
+| 공개 사이트 | 🟨 | https://whiteclover-portfolio.vercel.app | HTTPS·시크릿 창 비로그인 접속 |
 | 이력서 | ⬜ | 미정 | 비밀번호 없이 열림 |
 | 자기소개서 | ⬜ | 미정 | 카드 1 본편 반영 |
 | 경력기술서 | ⬜ | 미정 | 역량·상황·행동·결과 포함 |

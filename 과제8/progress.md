@@ -16,7 +16,7 @@
 **카드 1~5, 체크리스트 T08-C01~C53 전부 완료.** 남은 건 이 문서·`ASSIGNMENT.md`의 URL과 [인증구현설명서.md](인증구현설명서.md)/[검증안내서.md](검증안내서.md)/[AI3줄.md](AI3줄.md) 내용을 제출 폼에 그대로 옮기는 것뿐.
 
 ### 배포 정보 (확정)
-- **결과물 URL**: https://makeportfolio-red.vercel.app
+- **결과물 URL**: https://whiteclover-portfolio.vercel.app
 - **소스 URL**: https://github.com/whiteclover0542/portfolio (공개 저장소)
 - Vercel 프로젝트: `whiteclover/make_portfolio` / 저장소: Upstash for Redis(Vercel Marketplace, 무료) 연결됨 — env: `KV_REST_API_URL`, `KV_REST_API_TOKEN` 등이 Production/Preview/Development 전부에 설정됨
 
@@ -125,7 +125,7 @@
 > 공개 주소를 바로 열어 3단계 이내 행동으로 30초 안에 끝낼 수 있게 작성.
 
 ### 어디로 가나요
-- https://makeportfolio-red.vercel.app
+- https://whiteclover-portfolio.vercel.app
 
 ### 세 단계 안에 무엇을 하나요
 1. 위 주소를 연다 — WHO AM I~PROJECTS까지는 그대로 보인다 (1번 과제와 동일).

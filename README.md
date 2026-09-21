@@ -8,6 +8,7 @@ Security-minded Full-Stack Developer 개인 포트폴리오 페이지. 기본은
 
 함께 협업할 팀원들에게 "제가 누구인지"를 보여주기 위해 만든 페이지입니다. AI/LLM 기반 딥보이스(음성 딥페이크) 탐지, RAG, 안전성 검증 등 프로젝트 경험을 중심으로 구성했습니다.
 
+- **STORY** — "이름 없던 통증에서 평범한 오늘까지". 리추얼 기록 기반 변화 지표와 지원 문서 링크. 숫자·문단은 [regen/](regen/README.md) 장치로 만든 승인 문장만 반영합니다.
 - **WHO AM I / WHAT I DO / PROOF** — 첫 화면에서 3초 안에 포지셔닝과 핵심 지표(EER 0.98%, 위기 감지 40/40, G-Eval 4.6–4.8)를 보여줍니다.
 - **WORK & SKILLS** — GitHub, 기술 스택, 보안 관점 소개.
 - **HOW I WORK** — 상황·행동·결과(STAR) 형식으로 정리한 강점 3가지, 각 항목에 근거 자료를 토글로 연결.
@@ -18,7 +19,8 @@ Security-minded Full-Stack Developer 개인 포트폴리오 페이지. 기본은
 
 **프론트(정적)**
 - HTML5 / CSS3 / Vanilla JavaScript (프레임워크·빌드 과정 없음)
-- Google Fonts (Black Han Sans, Gowun Dodum, Noto Sans KR)
+- 자체 호스팅 웹폰트 `fonts/` (Black Han Sans, Gowun Dodum — 한글 KS X 1001 + 라틴 서브셋 woff2). 외부 폰트 서버에 의존하지 않습니다.
+- 눈이 편하도록 따뜻한 회백색 배경(`--paper`)과 카드 색(`--gray-100`)을 쓰고, 프로젝트 카드는 한 가지 톤으로 통일했습니다.
 
 **과제8 — 패스키 백엔드**
 - Vercel 서버리스 함수(`api/*.js`) + `@simplewebauthn/server`
@@ -46,11 +48,14 @@ npm run dev:local   # http://localhost:3000
 
 ```
 index.html      페이지 본문/구조 (공개 + PRIVATE 구역)
-style.css       스타일
-script.js       "자세히 보기" 토글 인터랙션
+style.css       스타일 (색상은 :root 변수)
+script.js       "자세히 보기" 토글, 히어로 포인터 스포트라이트
+fonts/          자체 호스팅 웹폰트(woff2)
+regen/          숫자·문단 후보 재생성 장치 (Node.js, 패키지 없음)
 passkey.js      패스키 등록/로그인 프런트 로직
 api/            Vercel 서버리스 함수 (등록·로그인·로그아웃·비공개 자료 조회)
-scripts/        로컬 테스트 서버, 자동 검증·스크린샷·PDF 렌더링 스크립트
+scripts/        로컬 테스트 서버, 자동 검증·스크린샷·PDF 렌더링, 디자인 점검(verify-design.mjs)
+PROGRESS.md     마지막 과제 BR-A 진행 현황
 과제1/, 과제8/   과제별 제출 문서
 ```
 

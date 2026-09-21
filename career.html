@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경력기술서 · 반소람</title>
+  <meta name="description" content="반소람(WHITECLOVER)의 경력기술서입니다. 프로젝트마다 역량·상황·행동·결과를 적었습니다.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23333333%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22sans-serif%22 font-weight=%22700%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>W</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="doc-page">
+  <nav class="doc-bar" aria-label="지원 문서">
+    <a href="/#resume">← WHITECLOVER</a>
+    <a href="resume.html">이력서</a>
+    <a href="cover-letter.html">자기소개서</a>
+    <a href="career.html" aria-current="page">경력기술서</a>
+  </nav>
+
+  <main class="doc">
+    <p class="doc-kicker">반소람</p>
+    <h1>경력기술서</h1>
+    <p class="doc-lede">프로젝트마다 역량·상황·행동·결과를 적었습니다.</p>
+
+    <h2>개인 프로젝트</h2>
+
+    <article class="doc-item">
+      <h3>Today CVE Info <span>2026.08.23 ~ 운영 중</span></h3>
+      <dl>
+        <dt>역량</dt><dd>자동화·안정 운영</dd>
+        <dt>상황</dt><dd>과제 4 제출 뒤에도 매일 새 데이터가 들어와야 했음</dd>
+        <dt>행동</dt><dd>Cloudflare Cron이 GitHub Actions를 깨워 NVD를 조회·커밋하고 Vercel이 재배포하는 서버 없는 배치로 운영, 조회 실패 시 마지막 정상값과 "오래된 데이터" 배너를 표시</dd>
+        <dt>결과</dt><dd>2026.09.19 기준 28일 중 27일 자동 수집, CVE 8,733건 분류, 주요 521건 중 475건에 원인·방지법 해설</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>SecretHound <span>2026.09.07 ~ 09.09</span></h3>
+      <dl>
+        <dt>역량</dt><dd>보안 도구 개발</dd>
+        <dt>상황</dt><dd>현재 파일에서 지운 API 키도 Git 이력에 남아 유출될 수 있었음</dd>
+        <dt>행동</dt><dd>파일과 커밋 이력을 함께 검사하는 Go 도구에 엔트로피·문맥 점수로 오탐 필터를 더함</dd>
+        <dt>결과</dt><dd>기본 탐지 룰 37개, 결과를 마스킹한 리포트 제공</dd>
+      </dl>
+    </article>
+
+    <h2>교육 과정 과제</h2>
+
+    <article class="doc-item">
+      <h3>과제 1 · 온라인 포트폴리오 페이지 <span>2026.08.18</span></h3>
+      <dl>
+        <dt>역량</dt><dd>공개 범위 판단</dd>
+        <dt>상황</dt><dd>협업할 팀원에게 나를 소개하는 페이지를 로그인 없이 공개해야 했음</dd>
+        <dt>행동</dt><dd>공개·비공개 범위를 직접 정하고, 헤드리스 브라우저로 반응형·명암 대비·Tab 순서를 점검</dd>
+        <dt>결과</dt><dd>명암 대비 2건과 favicon 404를 찾아 고친 뒤 공개</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 2 · 미니게임 「트리거 공 게임」 <span>2026.08.18 ~ 08.20</span></h3>
+      <dl>
+        <dt>역량</dt><dd>사용자 관점 설계</dd>
+        <dt>상황</dt><dd>처음 보는 사람이 30초 안에 규칙을 이해하는 미니게임을 만들어야 했음</dd>
+        <dt>행동</dt><dd>장애물 7종과 특성 4종으로 규칙을 단순화하고, 플레이 데이터를 보고 난이도를 조정</dd>
+        <dt>결과</dt><dd>매 판 장애물 10개를 무작위로 잇는 게임을 공개 주소로 배포</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 3 · 이미지 제작 도구 「file studio」 <span>2026.08.20 ~ 08.26</span></h3>
+      <dl>
+        <dt>역량</dt><dd>경계값 검증</dd>
+        <dt>상황</dt><dd>화면 미리보기와 내려받은 이미지 파일이 달라지기 쉬운 제작 도구였음</dd>
+        <dt>행동</dt><dd>Canvas API를 직접 다루며 화면비 3종과 극단 입력 12개 케이스를 검사</dd>
+        <dt>결과</dt><dd>1:1·4:5·9:16에서 미리보기와 파일 배치를 일치시키고, 잘못된 파일을 가져와도 기존 템플릿 보존</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 4 · CVE 정보 대시보드 「Today CVE Info」 <span>2026.08.26 ~ 08.28</span></h3>
+      <dl>
+        <dt>역량</dt><dd>자동화·안전 설계</dd>
+        <dt>상황</dt><dd>매일 쏟아지는 신규 CVE 중 위험한 것을 빨리 가려내기 어려웠음</dd>
+        <dt>행동</dt><dd>NVD 수집 배치, AI 해설, 대시보드, 장애 재현 모드를 혼자 구현하고 근거(CWE)가 없으면 해설을 만들지 않게 설계</dd>
+        <dt>결과</dt><dd>근거 없는 해설 차단과 장애 5종 재현 모드를 갖춰 제출, 이후 개인 프로젝트로 계속 운영</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 5 · AI 인계 실험 <span>2026.08.28</span></h3>
+      <dl>
+        <dt>역량</dt><dd>문서화·인계</dd>
+        <dt>상황</dt><dd>한 AI가 중단돼도 다른 AI가 같은 작업을 이어가야 했음</dd>
+        <dt>행동</dt><dd>기능·검사 10개와 AI 사용 상한을 먼저 정하고, 첫 AI의 작업을 인계 문서로 정리</dd>
+        <dt>결과</dt><dd>두 번째 AI가 인계 문서만으로 검사 4~10을 이어서 완료</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 6 · 플랜두씨 다이어리 1 <span>2026.08.28 ~ 08.31</span></h3>
+      <dl>
+        <dt>역량</dt><dd>데이터 무결성</dd>
+        <dt>상황</dt><dd>계획을 고치면 이전 계획이 사라지고, 완료를 두 번 누르면 기록이 겹칠 수 있었음</dd>
+        <dt>행동</dt><dd>계획 수정 직전 값을 DB 트리거로 자동 보존하고, 완료 처리를 한 번만 반영되게 설계</dd>
+        <dt>결과</dt><dd>계획·할 일·실행 기록·돌아보기를 잇는 Plan-Do-See 다이어리 완성</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 7 · 플랜두씨 다이어리 2 <span>2026.08.31 ~ 09.05</span></h3>
+      <dl>
+        <dt>역량</dt><dd>접근 제어</dd>
+        <dt>상황</dt><dd>6번 다이어리에 인증을 붙이고, 붙였다는 것을 보여야 했음</dd>
+        <dt>행동</dt><dd>Supabase 인증과 소유자 전용 행 수준 보안(RLS)을 적용하고, 남의 자료를 읽고·고치고·지우려는 요청이 막히는지 요청·응답으로 기록</dd>
+        <dt>결과</dt><dd>로그인 없이는 자료 화면이 열리지 않고 계정마다 자기 자료만 보이는 것을 5일 실사용으로 확인</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 8 · 패스키(WebAuthn) 인증 <span>2026.09.05 ~ 09.07</span></h3>
+      <dl>
+        <dt>역량</dt><dd>인증 보안</dd>
+        <dt>상황</dt><dd>포트폴리오의 비공개 영역을 비밀번호 없이 잠가야 했음</dd>
+        <dt>행동</dt><dd>패스키(WebAuthn) 등록·로그인·삭제를 서버리스로 구현하고 가상 인증기로 자동 검증</dd>
+        <dt>결과</dt><dd>체크리스트 47/47 통과, 재사용한 challenge와 남의 패스키 요청 거절 확인</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 9 · 강점을 찾는 에이전트 <span>2026.09.07</span></h3>
+      <dl>
+        <dt>역량</dt><dd>자기 분석</dd>
+        <dt>상황</dt><dd>17일간의 리추얼 기록에서 내 강점과 이야기를 찾아야 했음</dd>
+        <dt>행동</dt><dd>내 언어로 에이전트 규칙 5개를 세워 강점 후보를 뽑고, 직접 고르고 지운 이유를 기록</dd>
+        <dt>결과</dt><dd>상위 강점 3개의 강점 지도와 회복탄력성 이야기 초안 완성</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 10 · 논문 「발생 시각인가, 수집 시각인가」 <span>2026.09.07 ~ 09.14</span></h3>
+      <dl>
+        <dt>역량</dt><dd>연구 설계·정직한 보고</dd>
+        <dt>상황</dt><dd>로그를 지우지 않고 도착만 늦춰도 탐지가 무너지는지 검증해야 했음</dd>
+        <dt>행동</dt><dd>DARPA OpTC 로그에 지연을 주입해 두 탐지 엔진을 비교하고, 규칙 엔진 v2를 82,890회 실행</dd>
+        <dt>결과</dt><dd>초기 엔진 버그가 효과를 약 10배 부풀린 것을 찾아 무효가 된 주장까지 정정해 논문과 재현 패키지로 공개</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 11 · 장편소설 「평범할 나」 <span>2026.09.14 ~ 09.15</span></h3>
+      <dl>
+        <dt>역량</dt><dd>사실 검증</dd>
+        <dt>상황</dt><dd>내 삶을 소재로 3만 자 장편소설을 쓰되 사실과 다른 각색을 가려내야 했음</dd>
+        <dt>행동</dt><dd>AI 초안과 실제 경험을 대조표로 비교해 지어낸 장면과 잘못된 순서를 직접 정정</dd>
+        <dt>결과</dt><dd>12장 3만 자 소설 완성, 큰 수정 4곳을 근거와 함께 기록</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>과제 12 · 공개 자기소개 사이트와 재생성 장치 <span>2026.09.15 ~ 진행 중</span></h3>
+      <dl>
+        <dt>역량</dt><dd>재현 가능성</dd>
+        <dt>상황</dt><dd>기록이 쌓이면 사이트의 숫자와 문장을 다시 만들 수 있어야 했음</dd>
+        <dt>행동</dt><dd>입력이 같으면 결과가 같은 재생성 장치를 만들고, 승인한 문장만 사이트에 반영되게 설계</dd>
+        <dt>결과</dt><dd>공개 사이트 배포, 같은 입력 2회 실행 결과 동일 확인</dd>
+      </dl>
+    </article>
+
+    <h2>이전 교육 과정 팀 프로젝트</h2>
+
+    <article class="doc-item">
+      <h3>Deepfake Detection AI <span>약 3주</span></h3>
+      <dl>
+        <dt>역량</dt><dd>모델 성능 개선</dd>
+        <dt>상황</dt><dd>진짜 음성과 딥보이스(음성 딥페이크)를 구별해야 했음</dd>
+        <dt>행동</dt><dd>데이터 정제부터 RawNet2 구축, 3단계 점진적 언프리징과 RawBoost 증강으로 한국어 파인튜닝, Grad-CAM으로 판단 근거 시각화까지 담당</dd>
+        <dt>결과</dt><dd>학습 데이터를 늘려 가며 EER을 36.00%에서 0.98%까지 낮춤</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>PetLoss Care AI <span>약 3주</span></h3>
+      <dl>
+        <dt>역량</dt><dd>AI 안전성 설계</dd>
+        <dt>상황</dt><dd>정서적 위기 상황에서 안전하게 위로하되 위험 신호는 놓치지 않아야 했음</dd>
+        <dt>행동</dt><dd>위험도를 L0~L3로 나누고 맥락 점수와 LLM 판정 중 높은 쪽을 따르는 위기 감지 엔진, RAG 검색, LLM-as-judge 평가를 설계</dd>
+        <dt>결과</dt><dd>위기 감지 40/40, G-Eval 4.6-4.8, 목표를 넘은 WER 19.1%를 찾아 개선 작업으로 연결</dd>
+      </dl>
+    </article>
+
+    <article class="doc-item">
+      <h3>SafeMaintAI <span>약 3주</span></h3>
+      <dl>
+        <dt>역량</dt><dd>RAG 파이프라인 구현</dd>
+        <dt>상황</dt><dd>설비 정비 전 위험요인·안전조치와 근거 문서를 찾는 데 시간이 걸렸음</dd>
+        <dt>행동</dt><dd>pgvector와 키워드 하이브리드 검색, JSON 스키마를 강제한 Qwen LLM 응답, 백엔드 API와 채팅 UI까지 구현</dd>
+        <dt>결과</dt><dd>Recall/MRR·Faithfulness로 품질을 측정하고 인용 출처 정확도 100% 확인</dd>
+      </dl>
+    </article>
+  </main>
+</body>
+</html>

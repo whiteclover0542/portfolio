@@ -1269,3 +1269,164 @@ button.evidence-toggle:active {
     padding: 96px 20px;
   }
 }
+
+/* application documents (resume.html, cover-letter.html, career.html) */
+.doc-links a {
+  margin-right: 20px;
+}
+
+body.doc-page {
+  line-height: 1.8;
+}
+
+.doc-bar,
+main.doc {
+  width: min(820px, 100% - 32px);
+  margin: 0 auto;
+}
+
+.doc-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+}
+
+.doc-bar a {
+  color: var(--gray-700);
+  text-decoration: none;
+}
+
+.doc-bar a:first-child {
+  margin-right: auto;
+  color: var(--black);
+}
+
+.doc-bar a:hover,
+.doc-bar a[aria-current="page"] {
+  color: var(--clover-deep);
+}
+
+main.doc {
+  padding: 56px 0 120px;
+}
+
+.doc-kicker {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+}
+
+main.doc h1 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.2;
+}
+
+.doc-lede {
+  margin: 0 0 32px;
+  color: var(--gray-700);
+}
+
+main.doc h2 {
+  margin: 56px 0 16px;
+  padding-left: 16px;
+  border-left: 5px solid var(--black);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  line-height: 1.3;
+}
+
+main.doc a {
+  color: var(--clover-deep);
+  overflow-wrap: anywhere;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+main.doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+main.doc th,
+main.doc td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+main.doc th {
+  font-weight: 400;
+  color: var(--gray-700);
+  white-space: nowrap;
+}
+
+@media (min-width: 641px) {
+  main.doc td:nth-child(2):not(:last-child) {
+    white-space: nowrap;
+  }
+}
+
+.doc-item {
+  margin-bottom: 16px;
+  padding: 24px;
+  background: var(--surface);
+  border-top: 3px solid var(--charcoal);
+}
+
+.doc-item h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.doc-item h3 span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gray-700);
+}
+
+.doc-item dl {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 6px 12px;
+  margin: 0;
+}
+
+.doc-item dt {
+  color: var(--clover-deep);
+}
+
+.doc-item dd {
+  margin: 0;
+}
+
+@media print {
+  .doc-bar {
+    display: none;
+  }
+
+  body.doc-page {
+    background: var(--white);
+  }
+
+  main.doc {
+    padding: 0;
+  }
+
+  .doc-item {
+    break-inside: avoid;
+  }
+}

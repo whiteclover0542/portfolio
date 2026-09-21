@@ -78,6 +78,7 @@
 - [x] 자기소개서 초안: 카드 1 본편 기반, 공백 포함 1,205자 (2026-09-19)
 - [x] 경력기술서 초안: 과제 1~12 + SecretHound 한 줄씩 (2026-09-19)
 - [x] 각 경력기술서 줄에 역량·상황·행동·결과 포함 (줄마다 근거 문서 대조)
+- [x] 사이트 공개 페이지로 게시: `resume.html`·`cover-letter.html`·`career.html` (초안 메모·출처 대조표·근거 표는 제외, 2026-09-21)
 - [ ] 본인 검토 후 확정
 - [ ] 문서 파일 형식 및 열람 가능 여부 확인
 - [ ] 제출 전 개인정보·비밀값 제거
@@ -118,9 +119,9 @@
 | 제출물 | 상태 | 파일/URL | 검증 |
 | --- | :---: | --- | --- |
 | 공개 사이트 | 🟨 | https://whiteclover-portfolio.vercel.app | HTTPS·시크릿 창 비로그인 접속 |
-| 이력서 | ⬜ | 미정 | 비밀번호 없이 열림 |
-| 자기소개서 | ⬜ | 미정 | 카드 1 본편 반영 |
-| 경력기술서 | ⬜ | 미정 | 역량·상황·행동·결과 포함 |
+| 이력서 | 🟨 | https://whiteclover-portfolio.vercel.app/resume.html | 비밀번호 없이 열림 |
+| 자기소개서 | 🟨 | https://whiteclover-portfolio.vercel.app/cover-letter.html | 카드 1 본편 반영 |
+| 경력기술서 | 🟨 | https://whiteclover-portfolio.vercel.app/career.html | 역량·상황·행동·결과 포함 |
 | 장치 ZIP | ⬜ | 미정 | 소스·README·결과·비교 포함 |
 | 짧은 확인 방법 | ⬜ | 미정 | URL·각 섹션 위치·ZIP 구성 설명 |
 | AI와 나의 판단 3줄 | ⬜ | 미정 | AI 위임·직접 판단·미채택 제안 분리 |

@@ -33,7 +33,7 @@
 - 로그인: 로그인 성공 시 세션 쿠키 발급 → `/api/session` `loggedIn:true`. 방금 성공한 로그인 요청 바디를 그대로 재전송 → **401 "이미 사용됨"** (challenge 1회용 확인). 로그아웃한 옛 세션 쿠키 재사용 시도 → **401**.
 - 기기 분실: alice 계정에 패스키 2개(`alice-노트북`, `alice-폰`) 등록 → 목록에 이름+등록일 표시 → `alice-노트북` 삭제 → 남은 `alice-폰`으로 재로그인 **성공** → 삭제된 credential id로 로그인 시도 시 **401 "이 계정에 등록된 패스키가 아닙니다."**
 - 교차 계정: alice·bob 두 계정 각각 패스키 등록(메모 내용도 서로 다름 확인) → alice의 credential id로 bob 계정에 로그인 시도 **401**, 반대 방향도 **401** (양방향 확인) → alice 세션으로 로그인한 채 쿼리스트링·헤더에 `bob-demo`를 지정해도 응답은 항상 alice 자신의 메모만 반환.
-- 배포 주소(makeportfolio-red.vercel.app)에서도 위 전체 시나리오가 동일하게 통과 (rpID가 실제 도메인으로 정확히 잡힘, Redis에 실제로 저장/조회됨).
+- 배포 주소(whiteclover-portfolio.vercel.app)에서도 위 전체 시나리오가 동일하게 통과 (rpID가 실제 도메인으로 정확히 잡힘, Redis에 실제로 저장/조회됨).
 
 ---
 
@@ -98,7 +98,7 @@
 - [x] T08-C46 패스키가 하나도 안 남았을 때 어떻게 되는지 화면·제출문에 적혀 있다 — 삭제 시 UI 확인창 문구 + 설명서 ⑥에 한계로 기술
 
 ### 카드 5 — 교차 검증 + 설명서
-- [x] T08-C01 결과물 URL 필드에 HTTPS URL 1개 — https://makeportfolio-red.vercel.app
+- [x] T08-C01 결과물 URL 필드에 HTTPS URL 1개 — https://whiteclover-portfolio.vercel.app
 - [x] T08-C02 소스 URL 필드에 HTTPS URL 1개 — https://github.com/whiteclover0542/portfolio (공개 저장소)
 - [x] T08-C03 모든 URL이 새 시크릿 창에서 계정 생성/로그인/인증/초대/비밀번호/OAuth/CAPTCHA 없이 열린다 — 둘 다 로그인 없이 바로 열림(확인됨)
 - [x] T08-C10 결과물 첫 화면이 공개 소개 페이지, 등록 없이 열린다 — evidence-prod/01 스크린샷으로 확인

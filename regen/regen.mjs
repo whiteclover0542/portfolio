@@ -10,7 +10,7 @@ const HERE = path.dirname(SELF);
 const MARK_START = "<!-- regen:start -->";
 const MARK_END = "<!-- regen:end -->";
 const DAY_MS = 86400000;
-const PEOPLE_WORDS = ["협업", "동료", "팀", "피드백", "함께"];
+const PEOPLE_WORDS = ["협업", "동료", "팀", "피드백", "함께", "주변"];
 
 const sha256 = (data) => crypto.createHash("sha256").update(data).digest("hex");
 const has = (v) => typeof v === "string" && v.trim() !== "";
@@ -24,6 +24,17 @@ function dayNumber(date, where) {
   }
   return Date.parse(date + "T00:00:00Z") / DAY_MS;
 }
+
+// 공백은 훈련일 중 기록이 빠진 날만 센다. 출석 기록이 있으면 그 날짜들이 훈련일이고,
+// 없으면 평일(월~금)을 훈련일로 본다(이 경우 공휴일도 공백으로 셈).
+const isWeekend = (n) => [0, 6].includes(new Date(n * DAY_MS).getUTCDay());
+function missedWeekdays(fromN, toN) {
+  let count = 0;
+  for (let n = fromN + 1; n < toN; n++) if (!isWeekend(n)) count++;
+  return count;
+}
+
+const toDate = (n) => new Date(n * DAY_MS).toISOString().slice(0, 10);
 
 function readList(file) {
   const data = JSON.parse(fs.readFileSync(path.join(HERE, file), "utf8"));
@@ -57,18 +68,24 @@ export function computeStats({ rituals, assignments, attendance }) {
 
   let longest = { days: 0 };
   let run = null;
+  const trainingDays = attendance.map((a) => dayNumber(a.date, "input/attendance.json"));
+  const missedBetween = (a, b) =>
+    trainingDays.length ? trainingDays.filter((n) => n > a && n < b).length : missedWeekdays(a, b);
+  const gapDays = [];
   let comebacks = 0;
   let longestGapDays = 0;
   for (const r of rituals) {
     const n = dayNumber(r.date, "rituals");
-    if (run && n === run.endN + 1) {
+    const missed = run ? missedBetween(run.endN, n) : 0;
+    if (run && missed === 0) {
       run.end = r.date;
       run.endN = n;
       run.days++;
     } else {
       if (run) {
         comebacks++;
-        longestGapDays = Math.max(longestGapDays, n - run.endN - 1);
+        longestGapDays = Math.max(longestGapDays, missed);
+        gapDays.push(...trainingDays.filter((d) => d > run.endN && d < n));
       }
       run = { start: r.date, end: r.date, endN: n, days: 1 };
     }
@@ -85,16 +102,45 @@ export function computeStats({ rituals, assignments, attendance }) {
     recordDays: rituals.length,
     morning: rituals.filter((r) => has(r.morning)).length,
     closing: rituals.filter((r) => has(r.closing)).length,
+    noClosingDates: rituals.filter((r) => has(r.morning) && !has(r.closing)).map((r) => r.date),
     longestStreak: longest,
     comebacks,
     longestGapDays,
+    gapDates: gapDays.map(toDate),
+    gapLeaveDates: gapDays.map(toDate).filter((d) => attendance.some((a) => a.date === d && a.status === "공가")),
     assignments: { total: assignments.length, submitted: submitted.length, lastSubmittedAt: submitted.at(-1) ?? null },
     attendance: {
       total: attendance.length,
       present: attendance.filter((a) => a.present === true).length,
+      late: attendance.filter((a) => a.status === "지각").length,
+      leave: attendance.filter((a) => a.status === "공가").length,
       lastDate: attendance.at(-1)?.date ?? null,
     },
   };
+}
+
+// 출석률 계산식(출석·공가 ÷ 재적일)을 따르되, 지각·공가 수를 숨기지 않는다.
+function attendanceDetail(a) {
+  const parts = [a.late && `지각 ${a.late}일`, a.leave && `공가 ${a.leave}일`].filter(Boolean);
+  return parts.length ? ` (${parts.join(", ")} 포함)` : "";
+}
+
+// 아침만 있고 마무리가 없는 날을 밝힌다. 첫날뿐이면 "첫날"이라고 쓴다.
+function noClosingNote(s) {
+  const d = s.noClosingDates;
+  if (d.length === 0) return "";
+  if (d.length === 1 && d[0] === s.period.start) return ` (첫날 ${d[0].slice(5)}은 마무리 없음)`;
+  return ` (마무리 없는 날: ${d.map((x) => x.slice(5)).join(", ")})`;
+}
+
+// 기록이 빠진 훈련일이 공가(병가 등)였는지 밝힌다.
+function gapLeaveNote(s) {
+  const all = s.gapDates.length, leave = s.gapLeaveDates.length;
+  if (leave === 0) return "";
+  const days = s.gapLeaveDates.map((d) => d.slice(5)).join(", ");
+  return leave === all
+    ? ` 기록이 빠진 날(${days})은 모두 공가일이었습니다.`
+    : ` 기록이 빠진 훈련일 ${all}일 중 ${leave}일(${days})은 공가일이었습니다.`;
 }
 
 function buildCandidates(s, rituals) {
@@ -106,7 +152,7 @@ function buildCandidates(s, rituals) {
 
   add(
     "자기조절력",
-    `${s.period.start}부터 ${s.period.end}까지 ${s.recordDays}일을 기록했고(아침 기록 ${s.morning}회), 가장 길게는 ${s.longestStreak.days}일 연속으로 이어갔습니다.`,
+    `${s.period.start}부터 ${s.period.end}까지 ${s.recordDays}일을 기록했고(아침 기록 ${s.morning}회), 훈련일 기준 가장 길게는 ${s.longestStreak.days}일 연속으로 이어갔습니다.`,
     s.longestStreak.end,
     `내 리추얼 기록: 아침 ${s.morning}건, 최장 연속 ${s.longestStreak.start}~${s.longestStreak.end}`
   );
@@ -119,15 +165,15 @@ function buildCandidates(s, rituals) {
   if (s.comebacks > 0) {
     add(
       "자기동기력",
-      `기록이 끊긴 뒤에도 ${s.comebacks}번 다시 시작했고, 가장 긴 공백은 ${s.longestGapDays}일이었습니다.`,
+      `기록이 끊긴 뒤에도 ${s.comebacks}번 다시 시작했고, 가장 긴 공백은 훈련일 ${s.longestGapDays}일이었습니다.${gapLeaveNote(s)}`,
       s.period.end,
-      `내 리추얼 기록: 공백 뒤 재개 ${s.comebacks}회, 최장 공백 ${s.longestGapDays}일`
+      `내 리추얼 기록: 공백 뒤 재개 ${s.comebacks}회, 최장 공백 훈련일 ${s.longestGapDays}일${s.gapLeaveDates.length ? ` · 내 출석 기록: 공가 ${s.gapLeaveDates.join(", ")}` : ""}`
     );
   }
   if (s.assignments.total > 0) {
     add(
       "자기동기력",
-      `과제 ${s.assignments.total}개 중 ${s.assignments.submitted}개를 제출했습니다.`,
+      `과제 ${s.assignments.total}개 중 ${s.assignments.submitted}개를 제출했습니다${s.assignments.total > s.assignments.submitted ? ` (나머지 ${s.assignments.total - s.assignments.submitted}개는 진행 중)` : ""}.`,
       s.assignments.lastSubmittedAt ?? s.period.end,
       `내 제출 현황: 제출 ${s.assignments.submitted}/${s.assignments.total}`
     );
@@ -135,16 +181,16 @@ function buildCandidates(s, rituals) {
   if (s.attendance.total > 0) {
     add(
       "대인관계력",
-      `출석 대상 ${s.attendance.total}일 중 ${s.attendance.present}일 출석했습니다.`,
+      `출석 대상 ${s.attendance.total}일 중 ${s.attendance.present}일 출석했습니다${attendanceDetail(s.attendance)}.`,
       s.attendance.lastDate,
-      `내 출석 기록: 출석 ${s.attendance.present}/${s.attendance.total}`
+      `내 출석 기록: 출석 ${s.attendance.present}/${s.attendance.total}${attendanceDetail(s.attendance)}`
     );
   }
   for (const r of rituals) {
     for (const [field, label] of [["morning", "아침"], ["closing", "마무리"]]) {
       const t = r[field];
       if (!has(t) || !PEOPLE_WORDS.some((w) => t.includes(w))) continue;
-      const quote = t.trim().length > 60 ? t.trim().slice(0, 60) + "…" : t.trim();
+      const quote = t.trim().length > 80 ? t.trim().slice(0, 80) + "…" : t.trim();
       add("대인관계력", `${r.date}의 기록: "${quote}"`, r.date, `내 리추얼 기록 ${r.date} ${label}`);
     }
   }
@@ -162,11 +208,11 @@ function renderMarkdown(s, candidates) {
     `| 기간 | ${s.period.start} ~ ${s.period.end} | 내 리추얼 기록 |`,
     `| 기록한 날 | ${s.recordDays}일 | 내 리추얼 기록 |`,
     `| 아침 기록 | ${s.morning}회 | 내 리추얼 기록 |`,
-    `| 마무리 기록 | ${s.closing}회 | 내 리추얼 기록 |`,
-    `| 최장 연속 | ${s.longestStreak.days}일 (${s.longestStreak.start}~${s.longestStreak.end}) | 내 리추얼 기록 |`,
-    `| 공백 뒤 재개 | ${s.comebacks}회 (최장 공백 ${s.longestGapDays}일) | 내 리추얼 기록 |`,
+    `| 마무리 기록 | ${s.closing}회${noClosingNote(s)} | 내 리추얼 기록 |`,
+    `| 최장 연속(훈련일 기준) | ${s.longestStreak.days}일 (${s.longestStreak.start}~${s.longestStreak.end}) | 내 리추얼 기록 |`,
+    `| 공백 뒤 재개 | ${s.comebacks}회 (최장 공백 훈련일 ${s.longestGapDays}일) | 내 리추얼 기록 |`,
     `| 과제 제출 | ${s.assignments.submitted}/${s.assignments.total} | 내 제출 현황 |`,
-    `| 출석 | ${s.attendance.present}/${s.attendance.total}일 | 내 출석 기록 |`,
+    `| 출석 | ${s.attendance.present}/${s.attendance.total}일${attendanceDetail(s.attendance)} | 내 출석 기록 |`,
     "",
     "## 문단 후보",
     "",
@@ -222,10 +268,10 @@ function apply(sitePath) {
   const block = [
     `<ul class="regen-stats">`,
     `  <li><strong>${s.recordDays}일</strong> 기록 <small>출처: 내 리추얼 기록 · ${s.period.start}~${s.period.end}</small></li>`,
-    `  <li><strong>아침 ${s.morning}회 · 마무리 ${s.closing}회</strong> <small>출처: 내 리추얼 기록</small></li>`,
-    `  <li><strong>다시 시작 ${s.comebacks}회</strong> 최장 공백 ${s.longestGapDays}일 <small>출처: 내 리추얼 기록</small></li>`,
+    `  <li><strong>아침 ${s.morning}회 · 마무리 ${s.closing}회</strong>${noClosingNote(s)} <small>출처: 내 리추얼 기록</small></li>`,
+    `  <li><strong>다시 시작 ${s.comebacks}회</strong> 최장 공백 훈련일 ${s.longestGapDays}일 <small>출처: 내 리추얼 기록</small></li>`,
     ...(s.assignments.total ? [`  <li><strong>제출 ${s.assignments.submitted}/${s.assignments.total}</strong> <small>출처: 내 제출 현황</small></li>`] : []),
-    ...(s.attendance.total ? [`  <li><strong>출석 ${s.attendance.present}/${s.attendance.total}일</strong> <small>출처: 내 출석 기록</small></li>`] : []),
+    ...(s.attendance.total ? [`  <li><strong>출석 ${s.attendance.present}/${s.attendance.total}일</strong>${attendanceDetail(s.attendance)} <small>출처: 내 출석 기록</small></li>`] : []),
     `</ul>`,
     ...chosen.map(
       (c) => `<p class="regen-sentence">${esc(c.text)} <small>${esc(c.ability)} · ${esc(c.date)} · 근거: ${esc(c.evidence)}</small></p>`

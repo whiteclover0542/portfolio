@@ -1,5 +1,14 @@
 [
-  { "id": "sample-01", "title": "[샘플] 과제", "status": "submitted", "submittedAt": "2026-08-13" },
-  { "id": "sample-02", "title": "[샘플] 과제", "status": "submitted", "submittedAt": "2026-09-07" },
-  { "id": "sample-03", "title": "[샘플] 과제", "status": "open" }
+  {"id": "T01", "title": "온라인 포트폴리오 페이지", "status": "submitted", "submittedAt": "2026-08-18"},
+  {"id": "T02", "title": "미니게임 「트리거 공 게임」", "status": "submitted", "submittedAt": "2026-08-20"},
+  {"id": "T03", "title": "짤·카드 이미지 제작 도구 「file studio」", "status": "submitted", "submittedAt": "2026-08-26"},
+  {"id": "T04", "title": "오늘의 CVE 정보 대시보드 「Today CVE Info」", "status": "submitted", "submittedAt": "2026-08-28"},
+  {"id": "T05", "title": "AI가 바뀌어도 작업을 이어가는 인계 실험", "status": "submitted", "submittedAt": "2026-08-28"},
+  {"id": "T06", "title": "플랜두씨 다이어리 1 (로그인 없는 버전)", "status": "submitted", "submittedAt": "2026-08-31"},
+  {"id": "T07", "title": "플랜두씨 다이어리 2 (인증 추가)", "status": "submitted", "submittedAt": "2026-09-05"},
+  {"id": "T08", "title": "포트폴리오에 패스키(WebAuthn) 인증 달기", "status": "submitted", "submittedAt": "2026-09-07"},
+  {"id": "T09", "title": "리추얼 기록에서 강점을 찾는 에이전트", "status": "submitted", "submittedAt": "2026-09-07"},
+  {"id": "T10", "title": "첫 논문 「발생 시각인가, 수집 시각인가」", "status": "submitted", "submittedAt": "2026-09-14"},
+  {"id": "T11", "title": "3만 자 장편소설 「평범할 나」", "status": "submitted", "submittedAt": "2026-09-15"},
+  {"id": "T12", "title": "공개 자기소개 사이트와 재생성 장치", "status": "open"}
 ]

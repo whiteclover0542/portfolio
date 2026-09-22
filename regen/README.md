@@ -21,9 +21,11 @@
 | --- | --- |
 | `input/rituals.json` | `{ "date": "YYYY-MM-DD", "morning": "아침 기록", "closing": "마무리 기록" }` — 날짜당 1개, 빈 문자열은 기록 없음 |
 | `input/assignments.json` | `{ "id": "...", "title": "...", "status": "submitted" \| "open", "submittedAt": "YYYY-MM-DD" }` |
-| `input/attendance.json` | `{ "date": "YYYY-MM-DD", "present": true \| false }` |
+| `input/attendance.json` | `{ "date": "YYYY-MM-DD", "present": true \| false, "status": "출석" \| "지각" \| "공가" \| "결석" }` — 출석률 계산식(출석·공가 ÷ 재적일)대로 공가도 `present: true`, 지각·공가 수는 따로 표시 |
 
-지금 들어 있는 입력은 `[샘플]` 자료입니다. 날짜 수만 확인된 기준값(23일·아침 23회·마무리 21회)에 맞췄고 내용은 실제 기록이 아니므로, 원본으로 바꾸기 전에는 `apply`하지 마세요.
+`input/rituals.json`은 실제 리추얼 기록(2026-08-11~09-16, 출석 기록과 같은 기간)에서 **본인이 쓴 항목만** 옮긴 것입니다(아침: 강점·일화·알게 된 점 / 마무리: 감사일기·내가 나눈 감사). 동료가 쓴 문장은 넣지 않았고, 이름 가림 표시는 "동료"로 바꿨습니다. `attendance.json`은 내 출석 기록(2026-08-11~09-16, 비고란 제외)입니다. `assignments.json`은 내 제출 현황(Studio)입니다. 여러 번 제출한 과제는 마지막 제출일을 썼고, 과제 12는 지금 진행 중이라 `open`입니다.
+
+최장 연속과 공백은 훈련일 기준으로 셉니다. `attendance.json`에 있는 날짜가 훈련일이고, 출석 기록이 비어 있으면 평일(월~금)을 훈련일로 봅니다(이때는 공휴일도 공백으로 셉니다).
 
 ## 알아둘 것
 

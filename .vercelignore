@@ -3,3 +3,7 @@ scripts/
 drafts/
 graphify-out/
 .env*
+# 사이트에 필요 없는 작업 문서·원본 기록 (재생성 장치는 ZIP으로만 제출)
+PROGRESS.md
+ASSINGMENT.md
+regen/

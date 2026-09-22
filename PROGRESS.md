@@ -124,6 +124,7 @@
 | 자기소개서 | ✅ | https://whiteclover-portfolio.vercel.app/cover-letter.html | 카드 1 본편 반영 |
 | 경력기술서 | ✅ | https://whiteclover-portfolio.vercel.app/career.html | 역량·상황·행동·결과 포함 |
 | 장치 ZIP | ✅ | `drafts/제출물/regen-package.zip` (제출 시 업로드) | 소스·README·결과·비교 포함, 비밀번호 없음 |
+| 제출 묶음 ZIP | ✅ | `drafts/제출물/BR-A-제출.zip` (파일 칸에 업로드) | 확인 방법·판단 3줄·문서 PDF 3개·장치 ZIP 내용, 풀어서 test·check 통과, 비밀번호 없음 |
 | 짧은 확인 방법 | ✅ | `drafts/제출물/확인-방법.md` | URL·각 섹션 위치·ZIP 구성 설명 |
 | AI와 나의 판단 3줄 | ✅ | `drafts/제출물/AI와-나의-판단-3줄.md` | AI 위임·직접 판단·미채택 제안 분리 (2026-09-22 갱신) |
 

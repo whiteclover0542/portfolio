@@ -277,6 +277,33 @@
           <a class="project-link" href="https://github.com/whiteclover0542/pq-hybrid-downgrade" target="_blank" rel="noopener">GitHub →</a>
         </div>
       </li>
+      <li class="project-card">
+        <div class="project-head">
+          <h3>Security Telemetry Loss</h3>
+        </div>
+        <div class="project-stat"><span class="v">82,890회</span><span class="k">규칙 엔진 v2 실행</span></div>
+        <p class="project-line"><strong>Paper</strong> 발생 시각인가, 수집 시각인가: 텔레메트리 도착 지연이 시간 윈도우 탐지의 누락과 그 흔적을 바꾸는 방식</p>
+        <p class="project-line"><strong>Problem</strong> 수집 지연으로 이벤트 도착 순서가 바뀔 때, 시간 윈도우 기반 보안 탐지 규칙이 로그 손실 없이도 공격 흔적을 놓칠 수 있는 문제</p>
+        <p class="project-line"><strong>My Role</strong> 발생 시각·수집 시각을 다르게 쓰는 두 탐지 엔진을 비교하는 실험을 설계하고, 사전 등록한 가설·분석 스크립트·논문·재현 패키지를 구성</p>
+        <p class="project-line project-result"><strong>Result</strong> 수집 시각 기반 구성에서는 지연이 탐지 누락으로 이어질 수 있음을 확인했고, 발생 시각 보존·재정렬 버퍼가 남기는 흔적과 복구 범위도 함께 분석</p>
+        <ul class="project-tech">
+          <li>Python</li>
+          <li>DARPA OpTC</li>
+          <li>Experiment Design</li>
+          <li>unittest</li>
+          <li>Reproducibility</li>
+        </ul>
+
+        <button type="button" class="evidence-toggle" aria-expanded="false" aria-controls="project-detail-research-2">자세히 보기</button>
+        <div id="project-detail-research-2" class="evidence-detail" hidden>
+          <p>독립적으로 검증한 OpTC 호스트 로그 65,872,086건을 평가 입력으로 사용했습니다. 초기 엔진 버그가 효과를 과장했던 사실을 발견한 뒤, 무효가 된 주장까지 논문 정정 기록에 남기고 v2 결과로 다시 판정했습니다. 대용량 원본 대신 바이트 범위 색인·다운로드 manifest·테스트·분석 스크립트를 제공해 재현 경로를 남겼습니다.</p>
+        </div>
+
+        <div class="project-links">
+          <a class="project-link" href="https://github.com/whiteclover0542/security-telemetry-loss/blob/main/paper/PAPER.pdf" target="_blank" rel="noopener">논문 PDF →</a>
+          <a class="project-link" href="https://github.com/whiteclover0542/security-telemetry-loss" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </li>
     </ul>
 
     <p class="project-group-label project-group-label--spaced">App · 논문을 쓰는 도구</p>
